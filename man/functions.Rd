@@ -1,7 +1,7 @@
 \name{imageSearch}
 \alias{imageSearch}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{AppleScript dialogs for R}
+\title{DuckDuckGo Image Search}
 \description{
 Image search in DuckDuckGo.
 }
