@@ -1,5 +1,7 @@
 # duckImages
 
+![](https://img.shields.io/github/v/release/cadnza/duckImages) ![](https://img.shields.io/github/r-package/v/cadnza/duckImages)
+
 Image search in DuckDuckGo.
 
 ## Installation
