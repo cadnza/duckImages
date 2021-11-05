@@ -25,8 +25,8 @@
 imageSearch <- function(
 	searchTerm,
 	page=1,
-	type=NULL, #c("photo","clipart","gif","transparent","line"),
-	lay=NULL #c("Square","Tall","Wide")
+	type=NA, #c("photo","clipart","gif","transparent","line"),
+	lay=NA #c("Square","Tall","Wide")
 ){
 
 	# Get base URL ----
@@ -40,9 +40,9 @@ imageSearch <- function(
 		stop("\"type\" and \"lay\" must each be of max length 1.")
 
 	# Format arguments as parameters ----
-	if(!is.null(type))
+	if(!is.na(type))
 		type <- paste0("type:",type)
-	if(!is.null(lay))
+	if(!is.na(lay))
 		lay <- paste0("layout:",lay)
 	formatString <- paste(c(type,lay),collapse=",")
 	if(nchar(formatString)){
