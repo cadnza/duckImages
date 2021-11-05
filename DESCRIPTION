@@ -1,7 +1,7 @@
 Package: duckImages
 Type: Package
 Title: DuckDuckGo Image Search
-Version: 1.0.1
+Version: 1.2.1
 Author: Jon Dayley
 Maintainer: Jon Dayley <jonathandayley@gmail.com>
 Description: Searches DuckDuckGo Images.
