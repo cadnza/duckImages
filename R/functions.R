@@ -23,10 +23,10 @@
 
 # Get function to search images ----
 imageSearch <- function(
-	searchTerm,
-	page=1,
-	type=NA, #c("photo","clipart","gif","transparent","line"),
-	lay=NA #c("Square","Tall","Wide")
+		searchTerm,
+		page=1,
+		type=NA, #c("photo","clipart","gif","transparent","line"),
+		lay=NA #c("Square","Tall","Wide")
 ){
 
 	# Get base URL ----
@@ -106,7 +106,14 @@ imageSearch <- function(
 
 	# Format image URLs ----
 	tempCurlFile <- tempfile(fileext=".json")
-	curl::curl_download(link,destfile=tempCurlFile,handle=h)
+	canProceed <- TRUE
+	tryCatch(
+		curl::curl_download(link,destfile=tempCurlFile,handle=h),
+		error=function(x)
+			canProceed <<- FALSE
+	)
+	if(!canProceed)
+		return(NA)
 	resJson <- jsonlite::read_json(tempCurlFile)
 	file.remove(tempCurlFile)
 	resXml <- .listToXml(resJson)
