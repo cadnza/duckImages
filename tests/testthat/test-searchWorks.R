@@ -2,7 +2,7 @@ testthat::test_that("search works", {
 	final <- imageSearch(
 		"oranges",
 		page=1,
-		type=NA,
+		type="photo",
 		lay=NA
 	)
 	print(final)
