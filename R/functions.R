@@ -84,21 +84,9 @@ imageSearch <- function(
 	)[[1]][1,1]
 
 	# Get link for image search API ----
-	link <- utils::URLencode(
-		paste0(
-			duckBase,
-			"i.js",
-			"?",
-			paste(
-				paste0("q=",searchTerm),
-				"l=ru-ru",
-				"o=json",
-				paste("vqd",vqd,sep="="),
-				"f=,,,,,",
-				paste("p",page,sep="="),
-				standard,
-				sep="&"
-			)
+	linkTest <- utils::URLencode(
+		glue::glue(
+			"{duckBase}i.js?q={searchTerm}&l=ru-ru&o=json&vqd={vqd}&f=,,,,,&p={page}&{standard}"
 		)
 	)
 
