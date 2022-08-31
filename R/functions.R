@@ -69,16 +69,10 @@ imageSearch <- function(
 	# Format standard parameters ----
 	standard <- paste(c(duckImages,formatString),collapse="&")
 
-	# Get link for VQD extraction
+	# Get link for VQD extraction ----
 	linkA <- utils::URLencode(
-		paste0(
-			duckBase,
-			"?",
-			paste(
-				paste0("q=",searchTerm),
-				standard,
-				sep="&"
-			)
+		glue::glue(
+			"{duckBase}?q={searchTerm}&{standard}"
 		)
 	)
 
