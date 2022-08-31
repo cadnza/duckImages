@@ -29,10 +29,10 @@ imageSearch <- function(
 		lay=NA #c("Square","Tall","Wide")
 ){
 
-	# Get base URL ----
+	# Set base URL ----
 	duckBase <- "https://duckduckgo.com/"
 
-	# Get image parameters ----
+	# Set image parameters ----
 	duckImages <- "iax=images&ia=images&iar=images"
 
 	# Validate arguments ----
