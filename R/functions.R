@@ -40,18 +40,31 @@ imageSearch <- function(
 		stop("\"type\" and \"lay\" must each be of max length 1.")
 
 	# Format arguments as parameters ----
+	formatString <- NULL
 	if(!is.na(type))
-		type <- paste0("type:",type)
-	if(!is.na(lay))
-		lay <- paste0("layout:",lay)
-	formatString <- paste(c(type,lay),collapse=",")
-	if(nchar(formatString)){
-		formatString <- c(
-			paste0("iaf=",formatString),
-			paste0("f=",formatString)
+		formatString <- trimws(
+			paste(
+				formatString,
+				paste0("type:",type),
+				collapse=","
+			)
 		)
-	}else
-		formatString <- NULL
+	if(!is.na(lay))
+		formatString <- trimws(
+			paste(
+				formatString,
+				paste0("layout:",lay),
+				collapse=","
+			)
+		)
+	if(!is.null(formatString))
+		formatString <- paste(
+			c(
+				paste0("iaf=",formatString),
+				paste0("f=",formatString)
+			),
+			collapse="&"
+		)
 
 	# Format standard parameters ----
 	standard <- paste(c(duckImages,formatString),collapse="&")
