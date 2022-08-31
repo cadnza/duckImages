@@ -5,7 +5,6 @@ testthat::test_that("search works", {
 		type="photo",
 		lay=NA
 	)
-	print(final)
 	testthat::expect_true(
 		class(final[1])=="character",
 		info="An NA result means that curl_download failed.",
