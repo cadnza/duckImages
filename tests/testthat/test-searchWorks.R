@@ -8,7 +8,7 @@ testthat::test_that("search works", {
 	print(final)
 	testthat::expect_condition(
 		final[1],
-		class="logical",
+		class="character",
 		info="An NA result means that curl_download failed.",
 		label="Curl result"
 	)
