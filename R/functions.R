@@ -92,10 +92,15 @@ imageSearch <- function(
 
 	# Call image search API ----
 	h <- curl::new_handle()
-	curl::handle_setopt(h,useragent="DuckImageSearch")
+	uAgent <- paste(
+		"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+		"AppleWebKit/537.36 (KHTML, like Gecko)",
+		"Chrome/104.0.5112.102 Safari/537.36"
+	)
+	curl::handle_setopt(h,useragent=uAgent)
 	curl::handle_setheaders(
 		h,
-		"User-agent"="DuckImageSearch",
+		"User-agent"=uAgent,
 		"authority"="duckduckgo.com"
 	)
 
