@@ -4,8 +4,10 @@
 		x <- lapply(
 			x,
 			function(a){
-				if(is.null(a))
+				if(is.null(a)){
+					warning("No results returned; DuckDuckGo is misbehaving. Try again later.")
 					return(NA)
+				}
 				a <- as.list(a)
 				if(is.null(names(a)))
 					names(a) <- rep("x",length(a))
