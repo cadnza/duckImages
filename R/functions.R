@@ -89,7 +89,7 @@ imageSearch <- function(
     htmlWorking <- xml2::read_html(linkA)
     vqd <- stringr::str_match_all(
         as.character(htmlWorking),
-        "(?<=vqd=')[^']+"
+        "(?<=vqd=[\"'])[^\"']+"
     )[[1]][1, 1]
 
     # Get link for image search API ----
